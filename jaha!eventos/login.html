@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/registro.css">
+</head>
+<body id= "body">
+    <div class="container" style="margin-top: 5%; ">
+        <div class="row">
+            <div class="col-sm-4"> </div>
+            <div class="col-md-4">
+                <h1 class="text-center text-success">Logueate!!</h1>
+                <br/>
+                <form action="login2.php" method="POST">
+                    <div class="form-group">
+                        <label class="subtitulo" for="email">Correo Electronico:</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="subtitulo" for="pwd">Contraseña:</label>
+                        <input type="password" class="form-control" name="pwd">
+                    </div>
+                    <div class="text-center">
+                    <input type="submit" value="iniciar sesion" class="btn btn-default btn-lg" >
+                    
+                </form>
+                <br/>
+                <a href="registro.html" class="pull-right btn btn-block btn-danger" > no tienes cuenta? Registrate </a>
+            </div>
+        </div>
+  </div>
+
+  <!--<script>
+      $("#enviar").click(function(){
+          alert("entra")
+        let email= $("#email").val()
+        let pwd= $("#pwd").val()
+
+        let datos= {
+                email: email,
+                pwd: pwd
+            }
+
+        $.ajax({
+           
+            data: datos,
+            url: "login2.php",
+            type: "POST",
+            success: function(respuesta){
+                alert(respuesta)
+                if(respuesta== true){
+                    alert("insertado")
+                }else{
+                    alert("error")
+                }
+            }
+        })
+
+      })
+
+  </script>-->
+</body>
+</html>
+<php?
+
+include 'bd.php';
+
+<?

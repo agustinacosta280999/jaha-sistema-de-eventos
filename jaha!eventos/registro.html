@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+<body id= "body">
+
+<!-- if you want to create login page and register page together in one page ...you have to only chnage his name...that's it...                 -->
+<div class="container" style="margin-top: 5%; ">
+  <div class="row">
+    <div class="col-sm-4"> </div>
+<div class="col-md-4">
+  
+<h1 class="text-center text-success">Registrate!!</h1>
+<br/>
+
+<div class="col-sm-12">
+
+ <!-- <ul class="nav nav-pills" >
+
+
+
+    <li class="" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#home">dueño</a></li>
+   
+    <li class=" " style="width:48%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">cliente</a></li>
+
+
+
+  </ul>-->
+
+<br/>
+
+<form action="registro2.php" method="POST">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+
+
+  <div class="form-group">
+    <label class="subtitulo" for="nombre1">nombre:</label>
+    <input type="text" class="form-control" id="nombre_usuario">
+  </div>
+  
+  <div class="form-group">
+    <label class="subtitulo" for="email1">Correo Electronico:</label>
+    <input type="email" class="form-control" id="correo_usuario">
+  </div>
+  <!--<div class="form-group">
+    <input type="hidden" class= "form-control" id="tipoDeUsuario1" value= "1">
+  </div>-->
+
+  <div class="form-group">
+    <label class="subtitulo" for="pwd1">Contraseña:</label>
+    <input type="password" class="form-control" id="contraseña_usuario">
+  </div>
+
+  <div class="form-group">
+    <label class="subtitulo" for="pwd_confirm1">Confirmar Contraseña:</label>
+    <input type="password" class="form-control" id="pwd_confirm1">
+  </div>
+
+
+
+  <button type="submit" id= "enviar1" class="btn btn-default btn-lg">Enviar</button>
+
+</form>
+
+<br/>
+<a href="login.html" class="pull-right btn btn-block btn-danger" > ya estas regristrado/a?   </a>
+
+
+
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+
+<!--<form >
+
+  <div class="form-group">
+    <label class="subtitulo" for="nombre2">Nombre:</label>
+    <input type="text" class="form-control" id="nombre2">
+  </div>
+  
+  <div class="form-group">
+    <label class="subtitulo"for="email2">Correo Electronico:</label>
+    <input type="email" class="form-control" id="email2">
+  </div>
+  <div>
+    <input type="hidden"  class= "form-control" id="tipoDeUsuario2" value= "2">
+  </div>
+  <div class="form-group">
+    <label class="subtitulo"for="pwd2">Contraseña:</label>
+    <input type="password" class="form-control" id="pwd2">
+  </div>
+
+  <div class="form-group">
+    <label class="subtitulo"for="pwd_confirm2">Confirmar  Contraseña:</label>
+    <input type="password" class="form-control" id="pwd_confirm2">
+  </div>
+
+  <button type="submit" id= "enviar2" class="btn btn-default">Enviar</button>
+
+</form>
+<br/>
+<a href="login.html" class="pull-right btn btn-block btn-success" > Y esta registrado/a ?   </a>
+
+
+    </div>
+   </div>
+  </div>
+</div>
+</div>-->
+<script>
+      $("#enviar1").click(function(){
+        let email= $("#correo_usuario").val()
+        let pwd= $("#contraseña_usuario").val()
+        let nombre= $("#nombre_usuario").val()
+     //   let apellido= $("apellido_usuario").val()
+
+        let datos= {
+                email: email,
+                pwd: pwd,
+                nombre: nombre,
+                //apellido: apellido,
+            }
+          
+        $.ajax({         
+            data: datos,
+            url: "registro2.php",
+            type: "POST",
+            success: function(respuesta){
+                console.log(respuesta)
+                console.log(datos)
+                if(respuesta== true){
+                    alert("insertado")
+                }else{
+                    alert("error")
+                    
+                }
+            }
+        })
+
+      })
+
+  </script>
+  <!--<script>
+    $("#enviar2").click(function(){
+      let email= $("#email2").val()
+      let pwd= $("#pwd2").val()
+      let nombre= $("#nombre2").val()
+      let tipo_de_usuario= $("#tipoDeUsuario2").val()
+
+      let datos= {
+              email: email,
+              pwd: pwd,
+              nombre: nombre,
+              tipo_de_usuario: tipo_de_usuario
+          }
+        
+      $.ajax({
+         
+          data: datos,
+          url: "registro2.php",
+          type: "POST",
+          success: function(respuesta){
+              if(respuesta== true){
+                  alert("insertado")
+              }else{
+                  alert("error")
+              }
+          }
+      })
+
+    })
+
+</script>-->
+</body>
+</html>
